@@ -7,26 +7,36 @@
 </head>
 
 <body>
-	<p id = "title">fuck it we ball</p>
+	<p id = "title">CSM</p>
 	<div id="hey" onclick="samTime()">click me!</div>
+	<div id = "hey2" onclick="puter()">no wait, click me instead!</div>
 	
 	<style>
 		body {
-		  background-image: url('background.jpg');
+		  background-image: url('PB051231.JPG');
 		  background-repeat: no-repeat;
 		  background-attachment: fixed;
 		  background-size: cover;
 		}
 		
-		div {
-			color: blue;
+		#hey {
+			color: white;
 			text-align: center;
 		}
+		
+		#hey2 {
+			color: white;
+			position: absolute;
+			top: 55%;
+			left: 40%;
 </style>
 	
 <script>
 	function samTime() {
 		document.getElementById("hey").innerHTML = "PROOF OF CONCEPT";
+	}
+	function puter() {
+		document.getElementById("hey2").innerHTML = "PROOF OF CONCEPT BUT THE TEXT IS DIFFERENT (this one is going to be audio)";
 	}
 </script>
 </body>
