@@ -9,11 +9,12 @@
 <body>
 	<p id = "title">CSM</p>
 	<div id="hey" onclick="samTime()">click me!</div>
-	<div id = "hey2" onclick="puter()">no wait, click me instead!</div>
+	<div id = "hey2" onclick="play()">no wait, click me instead!</div>
+	<audio id="audio" src="paradise.mp3"></audio>
 	
 	<style>
 		body {
-		  background-image: url('background.jpg');
+		  background-image: url('PB051231.JPG');
 		  background-repeat: no-repeat;
 		  background-attachment: fixed;
 		  background-size: cover;
@@ -35,8 +36,10 @@
 	function samTime() {
 		document.getElementById("hey").innerHTML = "PROOF OF CONCEPT";
 	}
-	function puter() {
-		document.getElementById("hey2").innerHTML = "PROOF OF CONCEPT BUT THE TEXT IS DIFFERENT (this one is going to be audio)";
+	function play() {
+		document.getElementById("hey2").innerHTML = " ";
+		var audio = document.getElementById("audio");
+        audio.play()
 	}
 </script>
 </body>
