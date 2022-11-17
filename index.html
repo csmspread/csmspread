@@ -8,7 +8,26 @@
 
 <body>
 	<p id = "title">fuck it we ball</p>
-	<div class = "map">
-		<img id = "themap" src = "PB051231.jpg></img>
+	<div id="hey" onclick="samTime()">click me!</div>
+	
+	<style>
+		body {
+		  background-image: url('PB051231.jpg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+		
+		div {
+			color: blue;
+			text-align: center;
+		}
+</style>
+	
+<script>
+	function samTime() {
+		document.getElementById("hey").innerHTML = "PROOF OF CONCEPT";
+	}
+</script>
 </body>
 </html>
