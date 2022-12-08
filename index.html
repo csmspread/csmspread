@@ -12,6 +12,7 @@
 	<p id="hey" onclick="samTime()">BEGIN</p>
 	<div id = "shallow" onclick="goUp()">– SHALLOWER</div>
 	<div id = "deep" onclick="goDown()">DEEPER –</div>
+	<div id = "other" onclick="loadOthers()">MORE</div>
 	<audio id = "rainyday" loop src="rainy.mp3"></audio>
 	<audio id="dolphin" loop src="dolphin.mp3"></audio>
 	<audio id="fin" loop src="fin.mp3"></audio>
@@ -47,14 +48,14 @@
 		#shallow {
 			color: white;
 			position: absolute;
-			top: 2%;
+			top: 1%;
 			left: 5%%;
 		}
 		
 		#deep {
 			color: white;
 			position: absolute;
-			top: 2%;
+			top: 1%;
 			left: 12%;
 		}
 		
@@ -63,6 +64,16 @@
 			height: 100%;
 			top: 0%;
 			left: 0%;
+		}
+		
+		#page2 {
+			width: 100%;
+		}
+		
+		#other {
+			position: absolute;
+			color: transparent;
+			top: 97%;
 		}
 </style>
 	
@@ -87,6 +98,8 @@
 		document.getElementById("map").hidden = false;
 		document.getElementById("shallow").style.color = "gray";
 		document.getElementById("deep").style.color = "gray";
+		document.getElementById("other").style.color = "white";
+		document.getElementById("other").style.left = "118%";
 		audio.play();
 	}
 	function goUp() {
@@ -104,6 +117,10 @@
 		}
 		var audio = document.getElementById(audlist[counter]);
 		audio.play();
+	}
+	
+	function loadOthers() {
+		location.href = "page2.html";
 	}
 </script>
 </body>
