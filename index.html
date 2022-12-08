@@ -7,12 +7,18 @@
 </head>
 
 <body>
-	<p id = "title">CSM</p>
-	<div id="hey" onclick="samTime()">click me!</div>
-	<div id = "hey2" onclick="play()">no wait, click me instead!</div>
-	<audio id="audio" src="paradise.mp3"></audio>
-	<audio id="audio2" src="okolona.mp3"></audio>
-	<div id="square" onclick="play2()"> </div>
+	<body onLoad="hide()">
+	<img id = "map" src = "scenodemo.png"></img>
+	<p id="hey" onclick="samTime()">BEGIN</p>
+	<div id = "shallow" onclick="goUp()">– SHALLOWER</div>
+	<div id = "deep" onclick="goDown()">DEEPER –</div>
+	<audio id = "rainyday" loop src="rainy.mp3"></audio>
+	<audio id="dolphin" loop src="dolphin.mp3"></audio>
+	<audio id="fin" loop src="fin.mp3"></audio>
+	<audio id="blue" loop src="blue.mp3"></audio>
+	<audio id="gray" loop src="gray.mp3"></audio>
+	<audio id="humpback" loop src="humpback.mp3"></audio>
+	<audio id="sperm" loop src="sperm.mp3"></audio>
 	
 	<style>
 		body {
@@ -32,29 +38,72 @@
 		
 		#hey {
 			color: white;
-			text-align: center;
+			position: absolute;
+			top: 40%;
+			left: 45%;
+			font-size: xxx-large;
 		}
 		
-		#hey2 {
+		#shallow {
 			color: white;
 			position: absolute;
-			top: 55%;
-			left: 40%;
+			top: 2%;
+			left: 5%%;
+		}
+		
+		#deep {
+			color: white;
+			position: absolute;
+			top: 2%;
+			left: 12%;
+		}
+		
+		#map {
+			position: absolute;
+			height: 100%;
+			top: 0%;
+			left: 0%;
 		}
 </style>
 	
 <script>
+	audlist = ["dolphin", "humpback", "fin", "blue", "gray", "sperm"];
+	counter = 0;
+	var allAudios = document.querySelectorAll('audio');
+
+	function stopAllAudio(){
+		allAudios.forEach(function(audio){
+			audio.pause();
+		});
+	}
+	
+	function hide() {
+		document.getElementById("map").hidden = true;
+	}
+	
 	function samTime() {
-		document.getElementById("hey").innerHTML = "PROOF OF CONCEPT";
+		document.getElementById("hey").style.color = "transparent";
+		var audio = document.getElementById("rainyday");
+		document.getElementById("map").hidden = false;
+		document.getElementById("shallow").style.color = "gray";
+		document.getElementById("deep").style.color = "gray";
+		audio.play();
 	}
-	function play() {
-		document.getElementById("hey2").innerHTML = "or try clicking the fire...";
-		var audio = document.getElementById("audio");
-        audio.play()
+	function goUp() {
+		stopAllAudio();
+		if (counter != 0) {
+			counter -=1;
+		}
+		var audio = document.getElementById(audlist[counter]);
+		audio.play();
 	}
-	function play2() {
-		var audio2 = document.getElementById("audio2");
-        audio2.play()
+	function goDown() {
+		stopAllAudio();
+		if (counter != counter.length) {
+			counter +=1;
+		}
+		var audio = document.getElementById(audlist[counter]);
+		audio.play();
 	}
 </script>
 </body>
