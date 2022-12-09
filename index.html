@@ -12,7 +12,7 @@
 	<p id="hey" onclick="samTime()">BEGIN</p>
 	<div id = "shallow" onclick="goUp()">– SHALLOWER</div>
 	<div id = "deep" onclick="goDown()">DEEPER –</div>
-	<div id = "other" onclick="loadOthers()">MORE</div>
+	<div id = "other" onclick="loadOthers()">SEE MORE</div>
 	<audio id = "rainyday" loop src="rainy.mp3"></audio>
 	<audio id="dolphin" loop src="dolphin.mp3"></audio>
 	<audio id="fin" loop src="fin.mp3"></audio>
@@ -75,6 +75,7 @@
 			color: transparent;
 			top: 97%;
 		}
+
 </style>
 	
 <script>
@@ -98,8 +99,7 @@
 		document.getElementById("map").hidden = false;
 		document.getElementById("shallow").style.color = "gray";
 		document.getElementById("deep").style.color = "gray";
-		document.getElementById("other").style.color = "white";
-		document.getElementById("other").style.left = "118%";
+		document.getElementById("other").style.color = "gray";
 		audio.play();
 	}
 	function goUp() {
